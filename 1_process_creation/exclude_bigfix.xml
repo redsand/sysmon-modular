@@ -2,7 +2,7 @@
   <EventFiltering>
     <RuleGroup name="" groupRelation="or">
       <ProcessCreate onmatch="exclude">
-        <Image condition="is">C:\Program Files (x86)\BigFix Enterprise\BES Client\BESClient.exe</SourceImage>
+        <Image condition="is">C:\Program Files (x86)\BigFix Enterprise\BES Client\BESClient.exe</Image>
       </ProcessCreate>
     </RuleGroup>
   </EventFiltering>

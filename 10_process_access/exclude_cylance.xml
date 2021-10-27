@@ -3,11 +3,11 @@
 		<RuleGroup name="" groupRelation="or">
 			<ProcessAccess onmatch="exclude">
 				<!--CylanceOptics-->
-				<SourceImage condition="is">C:\Program Files\Cylance\Optics\CyOptics.exe</Image>
+				<SourceImage condition="is">C:\Program Files\Cylance\Optics\CyOptics.exe</SourceImage>
 				<!--CylanceSvc-->
-				<SourceImage condition="is">C:\Program Files\Cylance\Desktop\CylanceSvc.exe</Image>
+				<SourceImage condition="is">C:\Program Files\Cylance\Desktop\CylanceSvc.exe</SourceImage>
 				<!--CylanceUI-->
-				<SourceImage condition="is">C:\Program Files\Cylance\Desktop\CylanceUI.exe</Image>
+				<SourceImage condition="is">C:\Program Files\Cylance\Desktop\CylanceUI.exe</SourceImage>
 			</ProcessAccess>
 		</RuleGroup>
 	</EventFiltering>
