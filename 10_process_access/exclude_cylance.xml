@@ -1,0 +1,14 @@
+<Sysmon schemaversion="4.60">
+	<EventFiltering>
+		<RuleGroup name="" groupRelation="or">
+			<ProcessAccess onmatch="exclude">
+				<!--CylanceOptics-->
+				<SourceImage condition="is">C:\Program Files\Cylance\Optics\CyOptics.exe</Image>
+				<!--CylanceSvc-->
+				<SourceImage condition="is">C:\Program Files\Cylance\Desktop\CylanceSvc.exe</Image>
+				<!--CylanceUI-->
+				<SourceImage condition="is">C:\Program Files\Cylance\Desktop\CylanceUI.exe</Image>
+			</ProcessAccess>
+		</RuleGroup>
+	</EventFiltering>
+</Sysmon>
