@@ -1,0 +1,10 @@
+<Sysmon schemaversion="4.30">
+  <EventFiltering>
+    <RuleGroup name="" groupRelation="or">
+      <ImageLoad onmatch="exclude">
+        <Image condition="end with">devenv.exe</Image>
+        <Image condition="end with">devenv.com</Image>
+      </ImageLoad>
+    </RuleGroup>
+  </EventFiltering>
+</Sysmon>
