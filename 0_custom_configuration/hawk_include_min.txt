@@ -362,3 +362,4 @@
 ./29_file_executable_detected/include_user_writable_folders.xml
 ./29_file_executable_detected/include_windows_remote_management.xml
 ./29_file_executable_detected/include_writable_folders.xml
+./29_file_executable_detected/sysmon_config_vulnerable_hashes.xml
