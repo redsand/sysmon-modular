@@ -1771,16 +1771,6 @@
         <Operation name="technique_id=T1047,technique_name=Windows Management Instrumentation" condition="is">Created</Operation>
       </WmiEvent>
     </RuleGroup>
-    <!-- Default set to disabled due to disk space implications, enable with care!-->
-    <RuleGroup groupRelation="or">
-      <FileDelete onmatch="include">
-        <Rule name="Executables" groupRelation="and">
-          <IsExecutable>True</IsExecutable>
-          <Image condition="is not">C:\Windows\system32\cleanmgr.exe</Image>
-          <TargetFilename condition="not end with">.mui</TargetFilename>
-        </Rule>
-      </FileDelete>
-    </RuleGroup>
     <!-- Event ID 25 == Process tampering events - Excludes -->
     <RuleGroup groupRelation="or">
       <ProcessTampering onmatch="exclude">
@@ -6289,14 +6279,6 @@
     </RuleGroup>
     <RuleGroup groupRelation="or">
       <WmiEvent onmatch="exclude" />
-    </RuleGroup>
-    <RuleGroup groupRelation="or">
-      <FileDelete onmatch="exclude">
-        <Rule groupRelation="and">
-          <Image condition="is">C:\Windows\System32\svchost.exe</Image>
-          <TargetFilename condition="end with">.tmp</TargetFilename>
-        </Rule>
-      </FileDelete>
     </RuleGroup>
   </EventFiltering>
 </Sysmon>
