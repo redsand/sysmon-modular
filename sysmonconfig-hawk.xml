@@ -1876,17 +1876,17 @@
     </RuleGroup>
     <!-- Event ID 26 == File Delete and overwrite events, does NOT save the file - Includes -->
     <RuleGroup groupRelation="or">
-      <FileDeleteDetected onmatch="include" />
+      <FileDeleteDetected onmatch="exclude" />
     </RuleGroup>
     <!-- Event ID 27 == File Block Executable and overwrite events - Includes -->
     <!-- Default set to disabled due to potential unwanted blocks, enable with care!-->
     <RuleGroup groupRelation="or">
-      <FileBlockExecutable onmatch="include" />
+      <FileBlockExecutable onmatch="exclude" />
     </RuleGroup>
     <!-- Event ID 28 == Fileblock Shredding events - Includes -->
     <!-- Default set to disabled due to disk space implications, enable with care!-->
     <RuleGroup groupRelation="or">
-      <FileBlockShredding onmatch="include" />
+      <FileBlockShredding onmatch="exclude" />
     </RuleGroup>
     <!-- Event ID 29 == File Executable Detected events - Excludes -->
     <RuleGroup groupRelation="or">
