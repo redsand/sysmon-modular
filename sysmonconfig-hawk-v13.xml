@@ -1876,7 +1876,7 @@
     </RuleGroup>
     <!-- Event ID 26 == File Delete and overwrite events, does NOT save the file - Includes -->
     <RuleGroup groupRelation="or">
-      <FileDeleteDetected onmatch="exclude" />
+      <FileDeleteDetected onmatch="include" />
     </RuleGroup>
     <RuleGroup groupRelation="or">
       <ProcessTerminate onmatch="exclude">

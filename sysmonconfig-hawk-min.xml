@@ -2151,7 +2151,7 @@
     </RuleGroup>
     <!-- Event ID 26 == File Delete and overwrite events, does NOT save the file - Includes -->
     <RuleGroup groupRelation="or">
-      <FileDeleteDetected onmatch="exclude" />
+      <FileDeleteDetected onmatch="include" />
     </RuleGroup>
     <!-- Event ID 27 == File Block Executable and overwrite events - Includes -->
     <!-- Default set to disabled due to potential unwanted blocks, enable with care!-->
