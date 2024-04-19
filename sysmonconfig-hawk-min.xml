@@ -2105,6 +2105,21 @@
         <Operation name="technique_id=T1047,technique_name=Windows Management Instrumentation" condition="is">Created</Operation>
       </WmiEvent>
     </RuleGroup>
+    <!-- Event ID 22 == DNS Queries and their results Excludes -->
+    <RuleGroup groupRelation="or">
+      <!--Default to log all and exclude a few common processes-->
+      <DnsQuery onmatch="exclude" />
+    </RuleGroup>
+    <!-- Event ID 23 == File Delete and overwrite events which saves a copy to the archivedir - Includes -->
+    <!-- Default set to disabled due to disk space implications, enable with care!-->
+    <RuleGroup groupRelation="or">
+      <FileDelete onmatch="include" />
+    </RuleGroup>
+    <!-- Event ID 24 == Clipboard change events, only captures text, not files - Includes -->
+    <!-- Default set to disabled due to privacy implications and potential data you leave for attackers, enable with care!-->
+    <RuleGroup groupRelation="or">
+      <ClipboardChange onmatch="include" />
+    </RuleGroup>
     <!-- Event ID 25 == Process tampering events - Excludes -->
     <RuleGroup groupRelation="or">
       <ProcessTampering onmatch="exclude">
@@ -2133,6 +2148,24 @@
         <Image condition="is">C:\Program Files\Microsoft VS Code\Code.exe</Image>
         <Image condition="is">C:\Windows\System32\wbem\WMIADAP.exe</Image>
       </ProcessTampering>
+    </RuleGroup>
+    <!-- Event ID 26 == File Delete and overwrite events, does NOT save the file - Includes -->
+    <RuleGroup groupRelation="or">
+      <FileDeleteDetected onmatch="include" />
+    </RuleGroup>
+    <!-- Event ID 27 == File Block Executable and overwrite events - Includes -->
+    <!-- Default set to disabled due to potential unwanted blocks, enable with care!-->
+    <RuleGroup groupRelation="or">
+      <FileBlockExecutable onmatch="include" />
+    </RuleGroup>
+    <!-- Event ID 28 == Fileblock Shredding events - Includes -->
+    <!-- Default set to disabled due to disk space implications, enable with care!-->
+    <RuleGroup groupRelation="or">
+      <FileBlockShredding onmatch="include" />
+    </RuleGroup>
+    <!-- Event ID 29 == File Executable Detected events - Excludes -->
+    <RuleGroup groupRelation="or">
+      <FileExecutableDetected onmatch="exclude" />
     </RuleGroup>
     <RuleGroup groupRelation="or">
       <ProcessTerminate onmatch="exclude">
