@@ -2108,7 +2108,7 @@
     <!-- Event ID 22 == DNS Queries and their results Excludes -->
     <RuleGroup groupRelation="or">
       <!--Default to log all and exclude a few common processes-->
-      <DnsQuery onmatch="exclude" />
+      <DnsQuery onmatch="include" />
     </RuleGroup>
     <!-- Event ID 23 == File Delete and overwrite events which saves a copy to the archivedir - Includes -->
     <!-- Default set to disabled due to disk space implications, enable with care!-->
